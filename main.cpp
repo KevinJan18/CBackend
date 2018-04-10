@@ -31,7 +31,7 @@ int main(int argc, const char* argv[]) {
 
         str[100] = {0};
 
-        sleep(5gi);
+        sleep(5);
     }
     exit(0);
 }
