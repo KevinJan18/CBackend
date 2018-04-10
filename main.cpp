@@ -26,7 +26,11 @@ int main(int argc, const char* argv[]) {
         read(comm_fd, str, 100);
 
         printf("Echoing back - %s\n", str);
+
         write(comm_fd, str, strlen(str) + 1);
+
+        str[100] = {0};
+
         sleep(100);
     }
     exit(0);
