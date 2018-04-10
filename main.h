@@ -8,10 +8,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <winsock2.h>
+#include <unistd.h>
 
 int main(int argc, const char* argv[]){
-    printf("Hello World!");
-    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    while(1){
+        printf("Hello World!");
+        sleep(5);
+    }
     exit(0);
 }
 
