@@ -12,7 +12,7 @@
 int main(int argc, const char* argv[]){
     while(true){
         printf("Hello World!");
-        sleep(1000);
+        sleep(10000);
     }
     exit(0);
 }
