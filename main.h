@@ -7,7 +7,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <winsock2.h>
 #include <unistd.h>
 
 int main(int argc, const char* argv[]){
