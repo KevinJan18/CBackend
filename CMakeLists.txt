@@ -5,3 +5,6 @@ set(CMAKE_CXX_STANDARD 11)              # Enable c++11 standard
 set(SOURCE_FILES main.cpp Server.cpp Server.h main.cpp main.h)            # Add main.cpp file of project root directory as source file
 add_executable(cbackend ${SOURCE_FILES})       # Add executable target with source files listed in SOURCE_FILES variable
 add_executable(server ${SOURCE_FILES})       # Add executable target with source files listed in SOURCE_FILES variable
+if(WIN32)
+    target_link_libraries(cbackend wsock32 ws2_32)
+endif()
