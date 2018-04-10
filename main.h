@@ -10,7 +10,10 @@
 #include <unistd.h>
 
 int main(int argc, const char* argv[]){
-    printf("Hello World!");
+    while(true){
+        printf("Hello World!");
+        sleep(1000);
+    }
     exit(0);
 }
 
