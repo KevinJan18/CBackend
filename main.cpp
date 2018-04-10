@@ -9,7 +9,6 @@ int main(int argc, const char* argv[]) {
     int listen_fd, comm_fd;
 
     struct sockaddr_in servaddr;
-    printf("Poep");
 
     listen_fd = (int) socket(AF_INET, SOCK_STREAM, 0);
 
@@ -26,8 +25,9 @@ int main(int argc, const char* argv[]) {
 
         read(comm_fd, str, 100);
 
-        printf("Echoing back - %s\n",str);
-
+        if(!strcmp(str, "")) {
+            printf("Echoing back - %s\n", str);
+        }
         write(comm_fd, str, strlen(str) + 1);
 
     }
