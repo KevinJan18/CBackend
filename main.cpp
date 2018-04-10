@@ -29,7 +29,7 @@ int main(int argc, const char* argv[]) {
             printf("Echoing back - %s\n", str);
         }
         write(comm_fd, str, strlen(str) + 1);
-
+        sleep(100);
     }
     exit(0);
 }
