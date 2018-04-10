@@ -30,8 +30,6 @@ int main(int argc, const char* argv[]) {
         write(comm_fd, str, strlen(str) + 1);
 
         str[100] = {0};
-
-        sleep(100);
     }
     exit(0);
 }
