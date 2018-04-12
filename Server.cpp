@@ -38,9 +38,8 @@ void Server::getData() {
 
     printf("Got Data\n");
     printf("Echoing back - %s\n", data);
-    write(_comm_fd, data, (unsigned int) (strlen(data)));
+    write(_comm_fd, data, (unsigned int) (strlen(data) + 1));
     printf("Wrote Data\n");
-
 }
 
 char *Server::toString() {
