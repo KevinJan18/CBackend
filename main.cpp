@@ -4,32 +4,11 @@
 
 #include "main.h"
 
+
 int main(int argc, const char* argv[]) {
-    char str[100];
-    int listen_fd, comm_fd;
-
-    struct sockaddr_in servaddr;
-
-    listen_fd = (int) socket(AF_INET, SOCK_STREAM, 0);
-
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = htons(INADDR_ANY);
-    servaddr.sin_port = htons(80);
-
-    bind((SOCKET) listen_fd, (struct sockaddr *) &servaddr, sizeof(servaddr));
-
-    listen((SOCKET) listen_fd, 10);
-
-    comm_fd = (int) accept((SOCKET) listen_fd, (struct sockaddr *) NULL, NULL);
-
-    while (1) {
-
-        read(comm_fd, str, 100);
-
-        printf("Echoing back - %s\n",str);
-
-        write(comm_fd, str, (unsigned int) (strlen(str) + 1));
-
-    }
+    char* ip_addr = (char *) "127.0.0.1";
+    server = Server(80, (char *) "127.0.0.2");
+    char* string = server.toString();
+    return 0;
 }
 
