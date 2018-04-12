@@ -16,11 +16,11 @@ void Server::startup() {
 
     _listen_fd = (int) socket(AF_INET, SOCK_STREAM, 0);
 
-    _servaddr.sin_family = AF_INET;
-    _servaddr.sin_addr.s_addr = htons(INADDR_ANY);
-    _servaddr.sin_port = htons(59);
+    _serveraddr.sin_family = AF_INET;
+    _serveraddr.sin_addr.s_addr = htons(INADDR_ANY);
+    _serveraddr.sin_port = htons(59);
 
-    bind((SOCKET) _listen_fd, (struct sockaddr *) &_servaddr, sizeof(_servaddr));
+    bind((SOCKET) _listen_fd, (struct sockaddr *) &_serveraddr, sizeof(_serveraddr));
 
     listen((SOCKET) _listen_fd, 10);
 

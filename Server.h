@@ -30,7 +30,7 @@ private:
     int _listen_fd;
     int _comm_fd;
     char _data[100];
-    struct sockaddr_in _servaddr;
+    struct sockaddr_in _serveraddr;
     void cpString(char* source, char* dest);
     void zeroTarget(char* target);
 };
