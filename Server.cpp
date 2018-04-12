@@ -20,11 +20,11 @@ void Server::startup() {
     _serveraddr.sin_addr.s_addr = htons(INADDR_ANY);
     _serveraddr.sin_port = htons(59);
 
-    bind((SOCKET) _listen_fd, (struct sockaddr *) &_serveraddr, sizeof(_serveraddr));
+    bind( _listen_fd, (struct sockaddr *) &_serveraddr, sizeof(_serveraddr));
 
-    listen((SOCKET) _listen_fd, 10);
+    listen( _listen_fd, 10);
 
-    _comm_fd = (int) accept((SOCKET) _listen_fd, (struct sockaddr *) NULL, NULL);
+    _comm_fd = (int) accept( _listen_fd, (struct sockaddr *) NULL, NULL);
 }
 
 void Server::getData() {
