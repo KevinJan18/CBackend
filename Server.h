@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#incluse <string.h>
 #if defined(_WIN32)
 #define PORT 80
 #include <winsock2.h>
