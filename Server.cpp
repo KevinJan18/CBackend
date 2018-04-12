@@ -24,19 +24,21 @@ void Server::startup() {
 
     listen( _listen_fd, 10);
 
+    printf("Connected\n");
+
     _comm_fd = (int) accept( _listen_fd, (struct sockaddr *) NULL, NULL);
 }
 
 void Server::getData() {
-    zeroTarget(_data);
+    zeroTarget(data);
     printf("Zeroed Data\n");
     printf("Listening\n");
-    while(*_data == 0) {
-        read(_comm_fd, _data, 100);
+    while(*data == 0) {
+        read(_comm_fd, data, 100);
     }
     printf("Got Data\n");
-    printf("Echoing back - %s\n", _data);
-    write(_comm_fd, _data, (unsigned int) (strlen(_data)));
+    printf("Echoing back - %s\n", data);
+    write(_comm_fd, data, (unsigned int) (strlen(data)));
     printf("Wrote Data\n");
 
 }

@@ -27,12 +27,13 @@ public:
     void startup();
     void getData();
     char* toString();
+    char data[100];
 private:
     int _port;
     char* _ip_addr;
     int _listen_fd;
     int _comm_fd;
-    char _data[100];
+
     struct sockaddr_in _serveraddr;
     void cpString(char* source, char* dest);
     void zeroTarget(char* target);
