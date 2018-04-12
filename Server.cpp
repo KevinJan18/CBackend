@@ -42,9 +42,9 @@ void Server::getData() {
     printf("Echoing back - %s\n", data);
     write(_comm_fd, data, (unsigned int) (strlen(data) + 1));
 
-    closesocket(_listen_fd);
+    shutdown(_listen_fd, 2);
 
-    printf("Wrote Data\n");
+    printf("Closed connection\n");
 }
 
 char *Server::toString() {
