@@ -26,6 +26,7 @@ public:
     Server(int port = 80, char* ip_addr = (char *) "localhost");
     void startup();
     void getData();
+    void connect();
     char* toString();
     char data[100];
 private:

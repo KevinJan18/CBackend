@@ -23,7 +23,9 @@ void Server::startup() {
     bind( _listen_fd, (struct sockaddr *) &_serveraddr, sizeof(_serveraddr));
 
     listen( _listen_fd, 10);
+}
 
+void Server::connect(){
     _comm_fd = (int) accept( _listen_fd, (struct sockaddr *) NULL, NULL);
 
     printf("Connected\n");
