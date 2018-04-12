@@ -33,9 +33,9 @@ void Server::getData() {
     zeroTarget(data);
     printf("Zeroed Data\n");
     printf("Listening\n");
-    while(*data == 0) {
-        read(_comm_fd, data, 100);
-    }
+
+    read(_comm_fd, data, 100);
+
     printf("Got Data\n");
     printf("Echoing back - %s\n", data);
     write(_comm_fd, data, (unsigned int) (strlen(data)));
