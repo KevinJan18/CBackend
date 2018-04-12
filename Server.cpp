@@ -39,6 +39,9 @@ void Server::getData() {
     printf("Got Data\n");
     printf("Echoing back - %s\n", data);
     write(_comm_fd, data, (unsigned int) (strlen(data) + 1));
+
+    closesocket(_listen_fd);
+
     printf("Wrote Data\n");
 }
 

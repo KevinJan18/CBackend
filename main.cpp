@@ -10,7 +10,6 @@ int main(int argc, const char* argv[]) {
     server = Server(80, (char *) "127.0.0.2");
     server.startup();
     server.getData();
-
     return 0;
 }
 
