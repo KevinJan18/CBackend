@@ -42,7 +42,7 @@ void Server::getData() {
     printf("Echoing back - %s\n", data);
     write(_comm_fd, data, (unsigned int) (strlen(data) + 1));
 
-    shutdown(_listen_fd, 2);
+    shutdown(_comm_fd, 2);
 
     printf("Closed connection\n");
 }
