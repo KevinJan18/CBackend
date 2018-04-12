@@ -24,9 +24,9 @@ void Server::startup() {
 
     listen( _listen_fd, 10);
 
-    printf("Connected\n");
-
     _comm_fd = (int) accept( _listen_fd, (struct sockaddr *) NULL, NULL);
+
+    printf("Connected\n");
 }
 
 void Server::getData() {
