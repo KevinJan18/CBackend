@@ -16,11 +16,11 @@ int main(int argc, const char* argv[]) {
     servaddr.sin_addr.s_addr = htons(INADDR_ANY);
     servaddr.sin_port = htons(80);
 
-    bind(listen_fd, (struct sockaddr *) &servaddr, sizeof(servaddr));
+    bind((SOCKET) listen_fd, (struct sockaddr *) &servaddr, sizeof(servaddr));
 
-    listen(listen_fd, 10);
+    listen((SOCKET) listen_fd, 10);
 
-    comm_fd = accept(listen_fd, (struct sockaddr *) NULL, NULL);
+    comm_fd = (int) accept((SOCKET) listen_fd, (struct sockaddr *) NULL, NULL);
 
     while (1) {
 
@@ -28,7 +28,7 @@ int main(int argc, const char* argv[]) {
 
         printf("Echoing back - %s\n",str);
 
-        write(comm_fd, str, strlen(str) + 1);
+        write(comm_fd, str, (unsigned int) (strlen(str) + 1));
 
     }
 }
