@@ -4,35 +4,14 @@
 
 #include "main.h"
 
+
 int main(int argc, const char* argv[]) {
-    char str[100];
-    int listen_fd, comm_fd;
+    char* ip_addr = (char *) "127.0.0.1";
+    server = Server(80, (char *) "127.0.0.2");
+    server.startup();
+    printf("Started Up\n");
+    server.getData();
 
-    struct sockaddr_in servaddr;
-
-    listen_fd = (int) socket(AF_INET, SOCK_STREAM, 0);
-
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = htons(INADDR_ANY);
-    servaddr.sin_port = htons(80);
-
-    bind(listen_fd, (struct sockaddr *) &servaddr, sizeof(servaddr));
-
-    listen(listen_fd, 10);
-
-    comm_fd = accept(listen_fd, (struct sockaddr *) NULL, NULL);
-    while (1) {
-
-        read(comm_fd, str, 100);
-
-        printf("Echoing back - %s\n", str);
-
-        write(comm_fd, str, strlen(str) + 1);
-
-        str[100] = {0};
-
-        sleep(5gi);
-    }
-    exit(0);
+    return 0;
 }
 
