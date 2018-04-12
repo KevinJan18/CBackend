@@ -41,7 +41,6 @@ void Server::getData(){
 char *Server::toString() {
     char* string = (char*) malloc(sizeof(_ip_addr));
     cpString(_ip_addr, string);
-    zeroTarget(string);
     return string;
 }
 
