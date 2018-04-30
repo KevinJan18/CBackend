@@ -6,8 +6,13 @@
 
 
 int main(int argc, const char* argv[]) {
-    char* ip_addr = (char *) "127.0.0.1";
-    server = Server(80, ip_addr);
+    if(argc != 2){
+        printf("Not enough arguments, please pass an IP and Port, example: ./server 127.0.0.1 80\n");
+        exit(1);
+    }
+    char* ip_addr = (char *) argv[0];//(char *) "127.0.0.1";
+    int port = (int) argv[1];
+    server = Server(port, ip_addr);
     server.startup();
 
     while (true){
