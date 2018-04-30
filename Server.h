@@ -38,6 +38,8 @@ private:
     struct sockaddr_in _serveraddr;
     void cpString(char* source, char* dest);
     void zeroTarget(char* target);
+    void disconnect();
+
 };
 
 
