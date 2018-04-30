@@ -13,7 +13,9 @@ int main(int argc, const char* argv[]) {
     while (true){
         server.connect();
 
-        server.getData();
+        char* data = server.getData();
+
+        server.sendData(data);
 
         server.disconnect();
     }

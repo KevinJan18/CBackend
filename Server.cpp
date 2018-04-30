@@ -31,17 +31,20 @@ void Server::connect(){
     printf("Connected\n");
 }
 
-void Server::getData() {
+char* Server::getData() {
     zeroTarget(data);
     printf("Zeroed Data\n");
     printf("Listening\n");
 
     read(_comm_fd, data, 100);
 
+    return data;
+}
+
+void Server::sendData(char* data) {
     printf("Got Data\n");
     printf("Echoing back - %s\n", data);
     write(_comm_fd, data, (unsigned int) (strlen(data) + 1));
-
 }
 
 void Server::disconnect(){
