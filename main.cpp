@@ -14,6 +14,8 @@ int main(int argc, const char* argv[]) {
         server.connect();
 
         server.getData();
+
+        server.disconnect();
     }
     return 0;
 }
