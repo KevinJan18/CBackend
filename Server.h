@@ -27,6 +27,7 @@ public:
     void startup();
     void getData();
     void connect();
+    void disconnect();
     char* toString();
     char data[100];
 private:
@@ -38,8 +39,6 @@ private:
     struct sockaddr_in _serveraddr;
     void cpString(char* source, char* dest);
     void zeroTarget(char* target);
-    void disconnect();
-
 };
 
 
