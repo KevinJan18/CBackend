@@ -8,10 +8,8 @@
 #include <unistd.h>
 #include <string.h>
 #if defined(_WIN32)
-#define PORT 80
 #include <winsock2.h>
 #elif defined(__linux__)
-#define PORT 80
 #include <netdb.h>
 #include <sys/types.h>
 #include <sys/socket.h>
