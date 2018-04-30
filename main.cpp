@@ -6,6 +6,7 @@
 
 
 int main(int argc, const char* argv[]) {
+    printf("%s\n", (char *) argv);
     if(argc != 2){
         printf("Not enough arguments, please pass an IP and Port, example: ./server 127.0.0.1 80\n");
         exit(1);
