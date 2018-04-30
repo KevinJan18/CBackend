@@ -15,6 +15,8 @@ int main(int argc, const char* argv[]) {
 
         char* data = server.getData();
 
+        if(data == '\0') printf("Dat nullterminator tho\n");
+
         server.sendData(data);
 
         server.disconnect();
