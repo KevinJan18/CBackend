@@ -11,7 +11,7 @@ int main(int argc, const char* argv[]) {
         exit(1);
     }
     char* ip_addr = (char *) argv[0];//(char *) "127.0.0.1";
-    int port = (int) argv[1];
+    int port = atoi(argv[1]);
     server = Server(port, ip_addr);
     server.startup();
 
