@@ -10,10 +10,10 @@
 #include <unistd.h>
 #include <string.h>
 #if defined(_WIN32)
-#define PORT 80
+#define PORT 666
 #include <winsock2.h>
 #elif defined(__linux__)
-#define PORT 80
+#define PORT 666
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -23,7 +23,7 @@
 class Server {
 
 public:
-    Server(int port = 80, char* ip_addr = (char *) "localhost");
+    Server(int port = PORT, char* ip_addr = (char *) "localhost");
     void startup();
     void getData();
     void connect();

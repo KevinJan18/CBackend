@@ -7,7 +7,7 @@
 
 int main(int argc, const char* argv[]) {
     char* ip_addr = (char *) "127.0.0.1";
-    server = Server(80, ip_addr);
+    server = Server(666, ip_addr);
     server.startup();
 
     while (true){
@@ -19,4 +19,3 @@ int main(int argc, const char* argv[]) {
     }
     return 0;
 }
-
