@@ -60,7 +60,7 @@ dkms.conf
 
 #junk
 CMakeFiles/
-cbakend
+cbackend
 server
 *.ftpconfig
 
