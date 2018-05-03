@@ -21,7 +21,7 @@
 class Server {
 
 public:
-    Server(int port = 80, char* ip_addr = (char *) "localhost");
+    Server(int port = PORT, char* ip_addr = (char *) "localhost");
     void startup();
     char* getData();
     void sendData(char* data);

@@ -42,7 +42,6 @@ CMakeCache.txt
 *.app
 *.i*86
 *.x86_64
-*.hex
 
 # Debug files
 *.dSYM/
@@ -58,3 +57,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#junk
+CMakeFiles/
+cbakend
+server
+*.ftpconfig
+
